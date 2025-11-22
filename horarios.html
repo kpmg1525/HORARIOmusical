@@ -9,7 +9,7 @@
     <meta name="theme-color" content="#ff0000">
     <link rel="manifest" href="./manifest.json">
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 192 192'><rect fill='%23ff0000' width='192' height='192'/><text x='96' y='120' font-size='80' font-weight='bold' fill='white' text-anchor='middle' dominant-baseline='middle'>🎤</text></svg>">
-    <title>FLOW FEST 2024 - Horarios</title>
+    <title>FEST 2024 - Horarios</title>
     <style>
         * {
             margin: 0;
@@ -21,11 +21,12 @@
             font-family: Arial, sans-serif;
             background: linear-gradient(135deg, #ff0000 0%, #cc0000 100%);
             min-height: 100vh;
-            padding: 20px;
+            padding: 10px;
         }
 
         .container {
             max-width: 1400px;
+            width: 100%;
             margin: 0 auto;
             background: white;
             border-radius: 10px;
@@ -307,11 +308,231 @@
             font-weight: bold;
             font-size: 1.1em;
         }
+
+        /* Media Queries - Responsividad para diferentes tamaños de pantalla */
+
+        /* Tablets y pantallas medianas (768px y menores) */
+        @media (max-width: 768px) {
+            .container {
+                width: 100%;
+                max-width: 100%;
+                padding: 15px;
+            }
+
+            h1 {
+                font-size: 1.8em;
+                margin-bottom: 5px;
+            }
+
+            .subtitle {
+                font-size: 0.9em;
+                margin-bottom: 20px;
+            }
+
+            .controls {
+                gap: 8px;
+                margin-bottom: 20px;
+            }
+
+            .btn {
+                padding: 8px 15px;
+                font-size: 0.9em;
+            }
+
+            .schedule-table th,
+            .schedule-table td {
+                padding: 8px 5px;
+                font-size: 0.75em;
+                border: 1px solid #ddd;
+            }
+
+            .time-slot {
+                width: 70px;
+                min-width: 70px;
+                padding: 6px 4px;
+            }
+
+            .artist-item {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 3px;
+            }
+
+            .btn-remove-table {
+                width: 100%;
+                padding: 4px 8px;
+                font-size: 0.75em;
+            }
+
+            .artist-name-cell {
+                font-size: 0.85em;
+            }
+
+            .artist-time-cell {
+                font-size: 0.75em;
+            }
+        }
+
+        /* Móviles pequeños (480px y menores) */
+        @media (max-width: 480px) {
+            body {
+                padding: 5px;
+            }
+
+            .container {
+                width: 100%;
+                max-width: 100%;
+                padding: 8px;
+                border-radius: 5px;
+                box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+                margin: 0;
+            }
+
+            h1 {
+                font-size: 1.4em;
+                margin-bottom: 3px;
+            }
+
+            .subtitle {
+                font-size: 0.8em;
+                margin-bottom: 15px;
+            }
+
+            .controls {
+                flex-direction: column;
+                gap: 8px;
+                margin-bottom: 15px;
+            }
+
+            .btn {
+                width: 100%;
+                padding: 10px 12px;
+                font-size: 0.85em;
+            }
+
+            .schedule-table {
+                font-size: 0.7em;
+                display: block;
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
+                white-space: nowrap;
+            }
+
+            .schedule-table th,
+            .schedule-table td {
+                padding: 6px 4px;
+                font-size: 0.7em;
+                border: 1px solid #ddd;
+            }
+
+            .time-slot {
+                width: 60px;
+                min-width: 60px;
+                padding: 5px 3px;
+                font-size: 0.75em;
+                font-weight: bold;
+            }
+
+            .artist-item {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 2px;
+                padding: 3px 2px;
+                margin: 1px 0;
+            }
+
+            .artist-name-cell {
+                font-size: 0.8em;
+                font-weight: bold;
+            }
+
+            .artist-time-cell {
+                font-size: 0.65em;
+                color: #666;
+            }
+
+            .btn-remove-table {
+                width: 100%;
+                padding: 3px 6px;
+                font-size: 0.65em;
+                margin-top: 2px;
+            }
+
+            .btn-reset {
+                width: 100%;
+            }
+
+            .stats {
+                margin-top: 20px;
+                font-size: 0.85em;
+            }
+        }
+
+        /* Móviles en modo horizontal (orientación landscape) */
+        @media (max-height: 500px) and (orientation: landscape) {
+            .container {
+                padding: 8px;
+            }
+
+            h1 {
+                font-size: 1.2em;
+                margin-bottom: 2px;
+            }
+
+            .subtitle {
+                font-size: 0.7em;
+                margin-bottom: 8px;
+            }
+
+            .controls {
+                margin-bottom: 8px;
+            }
+
+            .btn {
+                padding: 6px 10px;
+                font-size: 0.8em;
+            }
+
+            .schedule-table th,
+            .schedule-table td {
+                padding: 4px 3px;
+                font-size: 0.65em;
+            }
+
+            .time-slot {
+                width: 50px;
+                min-width: 50px;
+                padding: 4px 2px;
+            }
+
+            .artist-item {
+                padding: 2px 1px;
+                gap: 1px;
+            }
+
+            .btn-remove-table {
+                padding: 2px 4px;
+                font-size: 0.6em;
+            }
+        }
+
+        /* Pantallas grandes (1200px+) */
+        @media (min-width: 1200px) {
+            .container {
+                max-width: 1600px;
+            }
+
+            .schedule-table th,
+            .schedule-table td {
+                padding: 14px;
+                font-size: 1em;
+            }
+        }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>🎤 FLOW FEST 2024</h1>
+        <h1>🎤 FEST 2024</h1>
         <p class="subtitle">Día 1 (14:00) - Día 2 (02:00)</p>
 
         <div class="controls">
